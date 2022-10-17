@@ -1,0 +1,130 @@
+body {
+  background-color: #2F4F4F;
+  font-family: Bebas Neue ;
+}
+
+.container{
+  display: flex;
+  justify-content: left;
+}
+
+.input-data {
+  margin-left: 13%;
+  text-align: center;
+  background-color: white;
+  line-height: 270%;
+  border-radius: 24px;
+  width: 30%;
+  height: 100%;
+}
+
+.input-image{
+  background-color: white;
+  border-radius: 24px;
+  line-height: normal;
+  margin-left: 13%;
+  width: 30%;
+}
+
+.block_description{
+  padding: 1%;
+  font-weight: bold;
+}
+
+.title {
+  text-align: center;
+  background-color: white;
+  margin: 1%;
+  line-height: 80px;
+  font-size: 50px;
+  border-radius: 24px;
+}
+
+.student_info{
+  text-align: left;
+  font-size: 18px;
+  background-color: white;
+  border-radius: 24px;
+  line-height: 30px;
+  margin: 1%;
+}
+
+.margin_text{
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 2em;
+}
+.coordinates{
+  background-color: white;
+  margin: 0;
+  line-height: 55px;
+  font-size: 20px;
+  border-radius: 24px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.img {
+  overflow: hidden;
+  justify-content: center;
+}
+
+.my_table {
+  width: 50%;
+  height: 100px;
+  text-align: center;
+  margin: 3% auto;
+  border-radius: 10px;
+  border-spacing: 0;
+  border-style: solid;
+  border-color: white;
+  overflow: hidden;
+
+}
+td, th {
+  padding: 3px;
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  border-color: white;
+  background-color: #0f75de;
+}
+th{
+  background: white;
+  text-shadow: 0 1px 1px #2D2020;
+  padding: 10px 20px;
+}
+
+.x_button {
+  cursor: pointer;
+  font-size: 20px;
+  border-color: red;
+}
+
+
+.r-button {
+  cursor: pointer;
+  min-width: 20px;
+  border-color: red;
+}
+
+.error{
+  border-color: red;
+}
+
+.y_text{
+  border-color: #2F4F4F;
+}
+
+.submit {
+  margin: 3%;
+  width: 60%;
+  height: 30px;
+  text-align: center;
+  border-radius: 24px;
+  border-color: #0f75de;
+  background-color: #0f75de;
+}
+
+.input.error{
+  border-color: red;
+}
