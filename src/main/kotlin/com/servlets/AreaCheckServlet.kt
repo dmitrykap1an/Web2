@@ -16,6 +16,9 @@ import java.util.LinkedList
 @WebServlet(name = "areaCheckServlet", value = ["/area-check-servlet"])
 class AreaCheckServlet: HttpServlet() {
 
+    override fun doGet(request: HttpServletRequest?, response: HttpServletResponse?) {
+        servletContext.getRequestDispatcher("/404.jsp").forward(request, response)
+    }
     override fun doPost(request: HttpServletRequest?, response: HttpServletResponse?) {
         try {
             val session = request!!.session

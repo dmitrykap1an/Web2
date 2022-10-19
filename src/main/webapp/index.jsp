@@ -62,7 +62,7 @@
             </div>
         </div>
         <div class="input-image img">
-            <img src="img/area.jpg" alt="График">
+            <img src="img/area.svg" alt="График">
         </div>
     </div>
 </div>
