@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletResponse
 class ControllerServlet : HttpServlet() {
 
     public override fun doGet(request: HttpServletRequest, response: HttpServletResponse){
-        // TODO: add 404 view
+        response.sendError(HttpServletResponse.SC_NOT_FOUND)
     }
 
     public override fun doPost(request: HttpServletRequest, response: HttpServletResponse){

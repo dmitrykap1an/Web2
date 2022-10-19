@@ -1,3 +1,4 @@
+<%@ page import="static utils.RowsStorageKt.getRows" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!doctype html>
 <html lang="en">
@@ -22,15 +23,15 @@
         <div class="input-data">
             <div>
                 <div class="block_description">Выбор X</div>
-                <label> -2 </label><input type="checkbox" id="x_button1" value="-2" class="x_button" name="x">
-                <label> -1.5 </label><input type="checkbox" id="x_button2" value="-1.5" class="x_button" name="x">
+                <label> -3 </label><input type="checkbox" id="x_button1" value="-3" class="x_button" name="x">
+                <label> -2 </label><input type="checkbox" id="x_button2" value="-2" class="x_button" name="x">
                 <label> -1</label><input type="checkbox" id="x_button3" value="-1" class="x_button" name="x">
-                <label> -0.5</label><input type="checkbox" id="x_button4" value="-0.5" class="x_button" name="x">
-                <label> 0</label><input type="checkbox" id="x_button5" value="0" class="x_button" name="x">
-                <label> 0.5</label><input type="checkbox" id="x_button6" value="0.5" class="x_button" name="x">
-                <label>1</label><input type="checkbox" id="x_button7" value="1" class="x_button" name="x">
-                <label>1.5</label><input type="checkbox" id="x_button8" value="1.5" class="x_button" name="x">
-                <label>2</label><input type="checkbox" id="x_button9" value="2" class="x_button" name="x">
+                <label> -0</label><input type="checkbox" id="x_button4" value="-0" class="x_button" name="x">
+                <label> 1</label><input type="checkbox" id="x_button5" value="1" class="x_button" name="x">
+                <label> 2</label><input type="checkbox" id="x_button6" value="2" class="x_button" name="x">
+                <label>3</label><input type="checkbox" id="x_button7" value="3" class="x_button" name="x">
+                <label>4</label><input type="checkbox" id="x_button8" value="4" class="x_button" name="x">
+                <label>5</label><input type="checkbox" id="x_button9" value="5" class="x_button" name="x">
             </div>
             <hr>
             <div>
@@ -77,7 +78,9 @@
             <th>Время выполнения
         </tr>
         </thead>
-        <tbody id="result"></tbody>
+        <tbody id="result">
+            <%=getRows(session)%>
+        </tbody>
     </table>
 </div>
 </body>

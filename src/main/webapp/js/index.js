@@ -120,29 +120,33 @@ function getResponse(request){
         alert(response.message)
     }
     else{
-        const row = document.createElement("tr");
-        const x = document.createElement("td");
-        const y = document.createElement("td");
-        const R = document.createElement("td");
-        const hit = document.createElement("td");
-        const request_time = document.createElement("td");
-        const timing = document.createElement("td");
-        x.innerHTML = response.x;
-        y.innerHTML = response.y;
-        R.innerHTML = response.R;
-        hit.innerHTML = response.result ? "Точка попала в область" : "Точка не попала в область";
-        request_time.innerHTML = response.serverTime;
-        timing.innerHTML = response.executeTime;
-        row.appendChild(x);
-        row.appendChild(y);
-        row.appendChild(R);
-        row.appendChild(hit);
-        row.appendChild(request_time);
-        row.appendChild(timing);
-        tbody.insertBefore(row, tbody.firstChild);
+       updateTable(response)
     }
 
 
+}
+
+function updateTable(response){
+    const row = document.createElement("tr");
+    const x = document.createElement("td");
+    const y = document.createElement("td");
+    const R = document.createElement("td");
+    const hit = document.createElement("td");
+    const request_time = document.createElement("td");
+    const timing = document.createElement("td");
+    x.innerHTML = response.x;
+    y.innerHTML = response.y;
+    R.innerHTML = response.R;
+    hit.innerHTML = response.result ? "Точка попала в область" : "Точка не попала в область";
+    request_time.innerHTML = response.serverTime;
+    timing.innerHTML = response.executeTime;
+    row.appendChild(x);
+    row.appendChild(y);
+    row.appendChild(R);
+    row.appendChild(hit);
+    row.appendChild(request_time);
+    row.appendChild(timing);
+    tbody.insertBefore(row, tbody.firstChild);
 }
 
 function sendRequest(x, y, R){
@@ -159,4 +163,19 @@ function sendRequest(x, y, R){
     request.send()
 
 }
+
+function rebootRequest(){
+    const path = "/controller-servlet?reboot";
+    const request = new XMLHttpRequest();
+    request.open("POST", path, true);
+    request.onreadystatechange = () =>{
+        if(request.readyState === 4 && request.status === 200){
+            console.log("reboot")
+        }
+    }
+    request.send()
+}
+
+
+rebootRequest()
 
