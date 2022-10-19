@@ -16,5 +16,9 @@
     <h1>404</h1>
     <h2>Страница не найдена :(</h2>
 </div>
+<div class="data">
+    в таком случае советуем посетить ресурсы
+        <a href="https://github.com/dmitrykap1an?tab=repositories">поинтереснее</a>
+</div>
 </body>
 </html>
