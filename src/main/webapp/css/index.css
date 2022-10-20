@@ -107,10 +107,6 @@ th{
   border-color: red;
 }
 
-.error{
-  border-color: red;
-}
-
 .y_text{
   border-color: #2F4F4F;
 }
@@ -127,4 +123,11 @@ th{
 
 .input.error{
   border-color: red;
+}
+
+#area{
+  width: 400px;
+  height: 280px;
+  border: 3px solid black;
+  margin: 40px;
 }
