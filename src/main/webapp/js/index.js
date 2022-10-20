@@ -14,11 +14,7 @@ function onsubmit(){
     let r = checkR()
     let array = [x, y, r]
     if(x.status && y.status && r.status){
-        for(let i = 0; i < x.mass.length; i++ ){
-            for(let j = 0; j < r.mass.length; j++){
-                sendRequest(x.mass[i], y.value, r.mass[j])
-            }
-        }
+        sendRequest(x.value, y.value, r.value)
     }
     else{
         let errorString = ""
@@ -67,23 +63,22 @@ function checkY(yVal){
 
 function checkX(){
     let number = 404;
-    let mass = []
     xButtons.forEach(function (input){
         if(input.checked){
-            mass.push(Number.parseFloat(input.value));
+            number = Number.parseFloat(input.value)
         }
     })
 
-    if(mass.length === 0){
+    if(number === 404){
         return {
             status: false,
-            mass: number,
+            value: number,
             errorMessage: "Выберете X!"
         }
     }
     else return {
         status: true,
-        mass: mass,
+        value:  number,
         errorMessage: ""
     }
 
@@ -92,23 +87,22 @@ function checkX(){
 
 function checkR(){
     let number = 404;
-    let mass = []
     rButtons.forEach(function (input){
         if(input.checked){
-            mass.push(Number.parseFloat(input.value));
+            number = Number.parseFloat(input.value);
         }
     })
 
-    if(mass.length === 0){
+    if(number === 404){
         return {
             status: false,
-            mass: number,
+            value: number,
             errorMessage: "Выберете R!"
         }
     }
     else return {
         status: true,
-        mass: mass,
+        value: number,
         errorMessage: ""
     }
 }

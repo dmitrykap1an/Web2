@@ -24,15 +24,15 @@
             <div class="input-data">
                 <div>
                     <div class="block_description">Выбор X</div>
-                    <label> -3 </label><input type="checkbox" id="x_button1" value="-3" class="x_button" name="x">
-                    <label> -2 </label><input type="checkbox" id="x_button2" value="-2" class="x_button" name="x">
-                    <label> -1</label><input type="checkbox" id="x_button3" value="-1" class="x_button" name="x">
-                    <label> 0</label><input type="checkbox" id="x_button4" value="0" class="x_button" name="x">
-                    <label> 1</label><input type="checkbox" id="x_button5" value="1" class="x_button" name="x">
-                    <label> 2</label><input type="checkbox" id="x_button6" value="2" class="x_button" name="x">
-                    <label>3</label><input type="checkbox" id="x_button7" value="3" class="x_button" name="x">
-                    <label>4</label><input type="checkbox" id="x_button8" value="4" class="x_button" name="x">
-                    <label>5</label><input type="checkbox" id="x_button9" value="5" class="x_button" name="x">
+                    <label> -3 </label><input type="radio" id="x_button1" value="-3" class="x_button" name="x">
+                    <label> -2 </label><input type="radio" id="x_button2" value="-2" class="x_button" name="x">
+                    <label> -1</label><input type="radio" id="x_button3" value="-1" class="x_button" name="x">
+                    <label> 0</label><input type="radio" id="x_button4" value="0" class="x_button" name="x">
+                    <label> 1</label><input type="radio" id="x_button5" value="1" class="x_button" name="x">
+                    <label> 2</label><input type="radio" id="x_button6" value="2" class="x_button" name="x">
+                    <label>3</label><input type="radio" id="x_button7" value="3" class="x_button" name="x">
+                    <label>4</label><input type="radio" id="x_button8" value="4" class="x_button" name="x">
+                    <label>5</label><input type="radio" id="x_button9" value="5" class="x_button" name="x">
                 </div>
                 <hr>
                 <div>
@@ -46,11 +46,11 @@
                 <div>
                     <div class="block_description">Выбор R</div>
                     <div>
-                        <label></label>1<input type="checkbox" name="r" id="choice_check1" value="1" class="r-button">
-                        <label>1.5</label><input type="checkbox" name="r" id="choice_check2" value="1.5" class="r-button">
-                        <label>2</label><input type="checkbox" name="r" id="choice_check3" value="2" class="r-button">
-                        <label>2.5</label><input type="checkbox" name="r" id="choice_check4" value="2.5" class="r-button">
-                        <label>3</label><input type="checkbox" name="r" id="choice_check5" value="3" class="r-button">
+                        <label></label>1<input type="radio" name="r" id="choice_check1" value="1" class="r-button">
+                        <label>1.5</label><input type="radio" name="r" id="choice_check2" value="1.5" class="r-button">
+                        <label>2</label><input type="radio" name="r" id="choice_check3" value="2" class="r-button">
+                        <label>2.5</label><input type="radio" name="r" id="choice_check4" value="2.5" class="r-button">
+                        <label>3</label><input type="radio" name="r" id="choice_check5" value="3" class="r-button">
 
                     </div>
                     <div>

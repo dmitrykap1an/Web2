@@ -39,7 +39,6 @@ fun getJsonRows(session: HttpSession): String{
         rows.forEach {
             list.add(it.getJson())
         }
-        println(SerializationList(list).jsonList())
         SerializationList(list).jsonList()
     }
     else ""
