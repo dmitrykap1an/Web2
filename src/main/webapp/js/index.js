@@ -8,18 +8,17 @@ const xButtons = document.querySelectorAll(".x_button"),
 form.addEventListener("click",onsubmit);
 
 
-function onsubmit(message){
+function onsubmit(){
     let x = checkX()
     let y = validateY()
     let r = checkR()
     let array = [x, y, r]
     if(x.status && y.status && r.status){
-        sendRequest(x.mass[0], y.value, r.mass[0])
-        // for(let i = 0; i < x.mass.length; i++ ){
-        //     for(let j = 0; j < r.mass.length; i++){
-        //         sendRequest(x.mass[i], y.value, r.mass[j])
-        //     }
-        // }
+        for(let i = 0; i < x.mass.length; i++ ){
+            for(let j = 0; j < r.mass.length; j++){
+                sendRequest(x.mass[i], y.value, r.mass[j])
+            }
+        }
     }
     else{
         let errorString = ""
@@ -127,6 +126,7 @@ function getResponse(request){
 }
 
 function updateTable(response){
+    addDots(response.x, response.y, response.R)
     const row = document.createElement("tr");
     const x = document.createElement("td");
     const y = document.createElement("td");
@@ -176,6 +176,20 @@ function rebootRequest(){
     request.send()
 }
 
+function addDots(x, y, r){
+    let coordinateX = x > 5 || x < -3? x: x >= 0? 200 + (x * 120)/r: 200 + (x * 120)/r
+    let coordinateY = y > 5 || y < -5 ? y:  y >= 0? 140 - (y * 120)/r: 140 - (y * 120)/r
+    drawCircle(coordinateX, coordinateY, 1, 0, 2*Math.PI)
+}
+
+function resetDots(request){
+    if(request !== undefined) {
+        request.forEach(function (data){
+            let dot = JSON.parse(data)
+            addDots(dot.x, dot.y, dot.R)
+        })
+    }
+}
 
 rebootRequest()
 
