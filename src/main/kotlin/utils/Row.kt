@@ -7,8 +7,8 @@ import kotlinx.serialization.json.Json
 
 @Serializable
 data class Row(
-    private val x: Int?, private val y: Double?, private val R: Double?, private val result: Boolean?,
-    private val serverTime: String?, private val executeTime: String?, private val error: Boolean, private val message: String){
+    private val x: Double?, private val y: Double?, private val R: Double?, private val result: Boolean?,
+    private val serverTime: String?, private val executeTime: String?, private val error: Boolean, private var message: String){
 
     fun getX() = x
     fun getY() = y
@@ -20,6 +20,12 @@ data class Row(
     fun getServerTime() = serverTime
 
     fun getExecuteTime() = executeTime
+
+    fun getError() = error
+
+    fun setMessage(mes: String){
+        message = mes
+    }
 
     fun getJson(): String{
         return Json.encodeToString(this)
