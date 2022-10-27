@@ -7,8 +7,15 @@ import kotlinx.serialization.json.Json
 
 @Serializable
 data class Row(
-    private val x: Double?, private val y: Double?, private val R: Double?, private val result: Boolean?,
-    private val serverTime: String?, private val executeTime: String?, private val error: Boolean, private var message: String){
+    private val x: Double?,
+    private val y: Double?,
+    private val R: Double?,
+    private val result: Boolean?,
+    private val serverTime: String?,
+    private val executeTime: String?,
+    private val error: Boolean,
+    private var message: String
+    ){
 
     fun getX() = x
     fun getY() = y

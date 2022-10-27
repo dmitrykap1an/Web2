@@ -26,27 +26,37 @@ class AreaCheckServlet: HttpServlet() {
             val y = request.getParameter("y").toDouble()
             val R = request.getParameter("R").toDouble()
 
-            val answer = Row(x, y, R,
-                checkSuccess(x, y ,R), LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")).toString(),
-                (((System.nanoTime() - request.getAttribute("startTime") as Long)/1000000).toBigDecimal().setScale(0, RoundingMode.HALF_UP)).toString() + " ms",
-                !validateData(x, y, R), "OK")
-
-            if(answer.getError()){
-                answer.setMessage("The coordinates are larger than expected")
+            val answer: Row
+            if(validateData(x,y, R)){
+                answer = Row(
+                    x, y, R,
+                    checkSuccess(x, y ,R),
+                    LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")).toString(),
+                    (((System.nanoTime() - request.getAttribute("startTime") as Long)/1000000)
+                        .toBigDecimal()
+                        .setScale(0, RoundingMode.HALF_UP))
+                        .toString() + " ms",
+                    false,
+                    "OK"
+                )
+                checkAttribute("rows", session)
+                (session.getAttribute("rows") as LinkedList<Row>).add(answer)
+                send(answer, response)
             }
-
-            checkAttribute("rows", session)
-            (session.getAttribute("rows") as LinkedList<Row>).add(answer)
-            send(answer, response)
+            else{
+                answer = Row(
+                    null, null, null,
+                    null,
+                    null,
+                    null,
+                    true,
+                    "The coordinates are larger than expected"
+                )
+            }
 
         } catch (e: NumberFormatException){
             val answer = Row(null, null, null, null, null,
                 null, true, "X, Y, R must be represented by numbers")
-            send(answer, response)
-        }
-        catch (e: NullPointerException){
-            val answer = Row(null, null, null, null, null,
-                null, true, "Server error")
             send(answer, response)
         }
     }
