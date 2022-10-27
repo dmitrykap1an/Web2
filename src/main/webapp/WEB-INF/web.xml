@@ -7,6 +7,15 @@
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+    <filter>
+        <filter-name>CounterFilter</filter-name>
+        <filter-class>filters.CounterFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>CounterFilter</filter-name>
+        <url-pattern>/controller-servlet</url-pattern>
+    </filter-mapping>
     <error-page>
         <error-code>404</error-code>
         <location>/404.jsp</location>
