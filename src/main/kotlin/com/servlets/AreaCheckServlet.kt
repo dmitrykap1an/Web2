@@ -1,7 +1,6 @@
 package com.servlets
 
 import utils.Row
-import java.lang.NullPointerException
 import java.lang.NumberFormatException
 import jakarta.servlet.annotation.WebServlet
 import jakarta.servlet.http.HttpServlet

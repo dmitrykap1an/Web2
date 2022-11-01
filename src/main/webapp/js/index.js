@@ -145,7 +145,7 @@ function updateTable(response){
 
 function sendRequest(x, y, R){
 
-    const path = "/controller-servlet?x=" + x + "&y=" + y + "&R=" + R
+    const path = "./controller-servlet?x=" + x + "&y=" + y + "&R=" + R
     const request = new XMLHttpRequest()
     request.open("POST", path, true)
 
@@ -159,7 +159,7 @@ function sendRequest(x, y, R){
 }
 
 function rebootRequest(){
-    const path = "/controller-servlet?reboot";
+    const path = "./controller-servlet?reboot";
     const request = new XMLHttpRequest();
     request.open("POST", path, true);
     request.onreadystatechange = () =>{

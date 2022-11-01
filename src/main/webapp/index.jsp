@@ -63,7 +63,9 @@
                 </div>
             </div>
             <div class="input-image img">
-                <canvas id="area" height="280" width="400">Bro, you have to put a good browser</canvas>
+                <p class="align_center">
+                    <canvas id="area" height="280" width="400">Bro, you have to put a good browser</canvas>
+                </p>
                 <script src="js/canvas.js"></script>
             </div>
         </div>
